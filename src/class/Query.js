@@ -53,7 +53,8 @@ export default class QueryInit {
 
      async getOrDelete(obj_query , dataBody) {
         console.log(obj_query , dataBody);
-        let response;
+       let response;
+       let error;
         try {
             if (obj_query.method === "GET") {
               response = await this.axios.get(obj_query.url);
@@ -83,12 +84,14 @@ export default class QueryInit {
              }
             
         }
+        console.log(response);
         if (response) {
             if (response.request.readyState === 4 && response.status >= 200 && response.status < 300) {
               console.log('in query ok');
-                return response;
-            }
-            return undefined
+              return response;
+            } 
+            return undefined;
+            
         }
         return undefined      
     }

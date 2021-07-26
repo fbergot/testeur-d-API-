@@ -1,4 +1,4 @@
-import '../App.css';
+// import '../App.css';
 
 
 export function DisplayData(props) {
@@ -7,7 +7,8 @@ export function DisplayData(props) {
          listItems = props.data.data.map((item , key) => {
             return <p key={key}>{JSON.stringify(item)}</p>
         })         
-    return <div className='data_display'>
+        return <div className='data_display'>
+               
         {listItems}
     </div>
     } else {

@@ -12,27 +12,27 @@ export default class ParamsGlobals extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    // paramsBase :
+      // query params
       url_input: "",
       methode_select_input: "GET",
-      // réponse :
+      // response
       responseData: "",
       display: false,
-      // progression :
+      // progress
       inProgress: false,
-      // erreur :
+      // errors
       error: [],
-      // bodyQuery :
+      // bodyQuery 
       input_name_bodyQuery: "",
       input_value_bodyQuery: "",
       list_fields: [],
-      // sauvegarder la configuration
+      // save config
       displaySaveConfig: false,
       inputNameConfig: '',
       arrayConfigs: [],
       selectedConfig : null
     };
-    // bind this
+
     this.handleChange_input = this.handleChange_input.bind(this);
     this.handleChangeInput = this.handleChangeInput.bind(this);
     this.onChangeList = this.onChangeList.bind(this);
@@ -41,7 +41,7 @@ export default class ParamsGlobals extends React.Component {
     this.onSaveConfig = this.onSaveConfig.bind(this);
     this.onSelectedConfig = this.onSelectedConfig.bind(this);
     this.removeConfig = this.removeConfig.bind(this);
-	this.onDeleteItemList = this.onDeleteItemList.bind(this);
+	  this.onDeleteItemList = this.onDeleteItemList.bind(this);
   }
 
   componentDidMount() {
@@ -52,9 +52,11 @@ export default class ParamsGlobals extends React.Component {
     // for load the configs of localStorage in state.arrayConfigs
     const arrConfigString = LocalStorage.getConfig();
     const arrConfigObj = [];
+
     for (let i = 0; i < arrConfigString.length; i++) {
       arrConfigObj.push(JSON.parse(arrConfigString[i]));
     }
+
     this.setState(function (state) {
       const selectConfig = arrConfigObj.length ? 'init' : "";
       return { arrayConfigs: arrConfigObj, selectedConfig: selectConfig };
@@ -96,17 +98,22 @@ export default class ParamsGlobals extends React.Component {
 
   // Ajoute des champs pour le coeur de la requête dans le state et fait des vérifs avant
   onChangeList() {
+
     const errArray = [];
+
     if (this.state.input_name_bodyQuery === "") {
       errArray.push("Le champs <Clé> ne doit pas être vide");
     }
+
     if (this.state.input_value_bodyQuery === "") {
       errArray.push("Le champs <Valeur> ne doit pas être vide");
     }
-      this.setState((state) => {
-        const errArr = this.createError(...errArray);
-        return { error: errArr };
-      });
+
+    this.setState((state) => {
+      const errArr = this.createError(...errArray);
+      return { error: errArr };
+    });
+
     if (errArray.length === 0) {
       const copyList = this.state.list_fields.slice();
       const newField = [];    
@@ -332,6 +339,7 @@ export default class ParamsGlobals extends React.Component {
           />
         )}
         {arrayError}
+        {this.state.display && <h3 className='headingResult'>Résultat(s) de la requête :</h3>}
         {this.state.display && <DisplayData data={this.state.responseData} />}
       </div>
     );

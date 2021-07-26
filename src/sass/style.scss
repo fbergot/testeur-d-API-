@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap");
+@import "./utils/variables";
+@import "./utils/fonts";
+
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html , body {
   font-size: 16px;
   padding: 0;
   margin: 0;
@@ -12,7 +13,7 @@ html, body {
 
 body {
   background-color: #FFF;
-  font-family: "Roboto", arial;
+  font-family: $fontRoboto;
   position: relative;
 }
 
@@ -26,7 +27,7 @@ header {
 
 .header__h1 {
   text-align: center;
-  font-family: "Shrikhand", cursive;
+  font-family: $fontShrikhand;
 }
 
 .url_method {
@@ -46,7 +47,7 @@ header {
 .content_url_input label {
   font-size: 1rem;
   font-weight: bold;
-  color: #4d4b4b;
+  color: $blackCustom;
   padding: 0 0.5em;
 }
 
@@ -65,16 +66,17 @@ header {
 }
 
 .method_content label {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+  padding: 0 .5rem;
+  color: $blackCustom;
   font-weight: bold;
 }
 
 .method_content select {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+  padding: 0 .5rem;
+  color: $blackCustom;
   height: 1.5rem;
-  border-color: #4d4b4b;
+  border-color: $blackCustom;
+
 }
 
 .buttonContainer {
@@ -96,58 +98,59 @@ header {
 }
 
 .selectConfigForm label {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+  padding: 0 .5rem;
+  color: $blackCustom;
   font-weight: bold;
 }
 
 .selectConfigForm select {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+  padding: 0 .5rem;
+  color: $blackCustom;
   height: 1.5rem;
   font-size: 1em;
   /* border: 1px solid grey; */
-  border-color: #4d4b4b;
+  border-color: $blackCustom;
 }
 
 .selectConfigForm button:nth-child(3) {
-  padding: 0 0.5rem;
-  color: #494040;
-  background-color: #e59b91;
+  padding: 0 .5rem;
+  color: rgb(73, 64, 64);
+  background-color: $deleteColor;
   margin: 1em;
   height: 1.5rem;
   font-weight: bold;
   border: none;
-  font-size: 0.85em;
+  font-size: .85em;
   border-radius: 5px;
 }
 
+
 .selectConfigForm button:nth-child(4) {
-  padding: 0 0.5rem;
-  color: #494040;
+  padding: 0 .5rem;
+  color: rgb(73, 64, 64);
   border: none;
-  background-color: #e59b91;
+  background-color: $deleteColor;
   font-weight: bold;
   margin: 1em 0;
   height: 1.5rem;
-  font-size: 0.85em;
+  font-size: .85em;
   border-radius: 5px;
 }
 
 .selectConfigForm button:nth-child(3):hover, .selectConfigForm button:nth-child(4):hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .saveConfig {
-  padding: 0 0.5rem;
-  color: #494040;
+  padding: 0 .5rem;
+  color: rgb(73, 64, 64);
   border: none;
-  background-color: #a5eca5;
+  background-color: $validColor;
   font-weight: bold;
   margin: 1em;
-  margin-left: 0.9rem;
+  margin-left: .9rem;
   height: 1.5rem;
-  font-size: 0.85em;
+  font-size: .85em;
   border-radius: 5px;
 }
 
@@ -155,18 +158,22 @@ header {
   cursor: pointer;
 }
 
+// .save_config {
+  
+// }
+
 .save_config form {
   display: flex;
   align-items: center;
 }
 
-.save_config form label {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+.save_config form label{
+  padding: 0 .5rem;
+  color: $blackCustom;
   font-weight: bold;
 }
 
-.save_config form input {
+.save_config form input{
   width: 300px;
   height: 1.5rem;
   padding: 0 9.5px;
@@ -174,39 +181,43 @@ header {
   text-align: left;
 }
 
-.save_config form button {
-  padding: 0 0.5rem;
-  color: #494040;
+.save_config form button{
+  padding: 0 .5rem;
+  color: rgb(73, 64, 64);
   border: none;
-  background-color: #a5eca5;
+  background-color: $validColor;
   font-weight: bold;
   margin: 1em 1em;
   height: 1.5rem;
-  font-size: 0.85em;
+  font-size: .85em;
   border-radius: 5px;
 }
 
-.save_config form button:hover {
+.save_config form button:hover{
   cursor: pointer;
 }
 
+
 .body_query {
-  border: 1px solid #b9b9b9;
-  margin-top: 10px;
-  padding-bottom: 1rem;
+    border: 1px solid rgb(185, 185, 185);
+    margin-top: 10px;
+    padding-bottom: 1rem;
+    
 }
 
-.body_query h2 {
-  color: #4d4b4b;
+.body_query h2{
+  color: $blackCustom;
   font-size: 1rem;
-  margin: 0.5rem;
+  margin: .5rem;
   width: 40%;
+
 }
 
 .body_query .bodyQueryContainer {
   display: flex;
   margin-top: 1rem;
   width: 50%;
+  
 }
 
 .body_query .bodyQueryContainer input {
@@ -216,21 +227,21 @@ header {
 }
 
 .queryLabel {
-  padding: 0 0.5rem;
-  color: #4d4b4b;
+  padding: 0 .5rem;
+  color: $blackCustom;
   font-weight: bold;
 }
 
 .but_add_field {
-  padding: 0 0.5rem;
-  color: #494040;
+  padding: 0 .5rem;
+  color: rgb(73, 64, 64);
   border: none;
-  background-color: #a5eca5;
+  background-color: $validColor;
   font-weight: bold;
   margin-left: 1em;
-  margin-left: 0.9rem;
+  margin-left: .9rem;
   height: 1.5rem;
-  font-size: 0.85em;
+  font-size: .85em;
   border-radius: 5px;
 }
 
@@ -239,20 +250,22 @@ header {
   /* align-items: center; */
 }
 
+
 .listItemBody {
-  width: 50%;
+    width: 50%;
 }
 
 .list_items {
   /* border: 2px solid blue; */
   margin-top: -35px;
-  padding-left: 0.5rem;
+  padding-left: .5rem;
 }
 
-.list_items h3 {
-  margin-top: 0.2rem;
+.list_items h3{
+  margin-top: .2rem;
   font-size: 1rem;
-  color: #4d4b4b;
+  color: $blackCustom;
+  
 }
 
 .itemContainer {
@@ -261,27 +274,27 @@ header {
 }
 
 .item {
-  padding: 0.2rem 0.5rem 0.5rem 0;
+  padding: 0.2rem .5rem .5rem 0;
   /* border: 1px solid grey; */
   margin-right: 0.5rem;
 }
 
 .itemDelete {
-  font-size: 1.1rem;
-  color: #f1762e;
-  border: 1px solid grey;
-  padding: 0.1rem 0.3rem;
+    font-size: 1.1rem;
+    color: rgb(241, 118, 46);
+    border: 1px solid grey;
+    padding: 0.1rem .3rem;
+    
 }
-
 .itemDelete:hover {
   background-color: grey;
   cursor: pointer;
 }
 
 .input_select_method {
-  width: auto;
-  height: 18px;
-  font-size: 16px;
+    width: auto;
+    height: 18px;
+    font-size: 16px;
 }
 
 .input_save_config {
@@ -290,17 +303,16 @@ header {
   font-size: 16px;
 }
 
+    
 .data_display {
-  margin-top: 10px;
-  border: 1px solid black;
+    margin-top: 10px;
+    border: 1px solid black;
 }
 
 .headingResult {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-  color: #4d4b4b;
-  text-align: center;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    font-size: 1.3rem;
+    color: $blackCustom;
+    text-align: center;
 }
-
-/*# sourceMappingURL=app.css.map */
